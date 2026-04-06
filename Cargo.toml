@@ -1,0 +1,7 @@
+[package]
+name = "integral_equation_test"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+gauss-quad = "0.1"
