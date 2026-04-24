@@ -6,6 +6,8 @@ pub fn make_grid(
     assert!(inf_bound > 0.0);
     assert!(nx > 1);
 
+    println!("Building a log-scale grid of {nx} poins between [{inf_bound}, {sup_bound}]");
+
     let log_inf = inf_bound.log10();
     let log_sup = sup_bound.log10();
 

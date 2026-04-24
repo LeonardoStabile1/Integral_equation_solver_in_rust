@@ -1,7 +1,3 @@
-use gauss_quad::GaussLegendre;
-
-// u(x) = 1 + 0.5 * \int_{-1}^{1} x * t * u(t) dt
-
 const PI: f64 = std::f64::consts::PI;
 
 
@@ -57,11 +53,12 @@ pub fn gauss_legendre_roots_weights(
 
     let mut x = vec![0.0; n];
     let mut w = vec![0.0; n];
-
-
+    
     for i in 1..=m {
         // Initial guess for the root
+
         z = f64::cos(PI * ((i as f64) - 0.25) / ( (n as f64) + 0.5) );
+        println!("z = {z}");
         'calculation: loop {
             p1 = 1.0;
             p2 = 0.0;
@@ -70,11 +67,10 @@ pub fn gauss_legendre_roots_weights(
                 p2 = p1;
                 p1 = ((2.0*(j as f64) - 1.0) * z * p2 - ((j as f64) - 1.0)*p3)/(j as f64);
             }
-
             //Compute the derivative of the legendre polynomial
             pp = (n as f64)*(z*p1 - p2)/(z*z - 1.0);
             z1 = z;
-            z = z1 - p1/pp.max(1e-30);
+            z = z1 - p1/pp;
 
             if (z-z1).abs() < tol{
                 break 'calculation;
