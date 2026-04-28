@@ -6,3 +6,4 @@ edition = "2024"
 [dependencies]
 bspline = "1.1.0"
 gauss-quad = "0.1"
+nalgebra = "0.34.2"

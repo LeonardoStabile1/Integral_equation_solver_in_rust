@@ -58,7 +58,6 @@ pub fn gauss_legendre_roots_weights(
         // Initial guess for the root
 
         z = f64::cos(PI * ((i as f64) - 0.25) / ( (n as f64) + 0.5) );
-        println!("z = {z}");
         'calculation: loop {
             p1 = 1.0;
             p2 = 0.0;

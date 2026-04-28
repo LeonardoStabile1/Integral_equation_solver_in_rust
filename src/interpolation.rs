@@ -12,7 +12,7 @@ pub fn barycentric_weights(
             }
         }
     }
-    println!("Finished barycentric_weights");
+
     w
 }
 
